@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2{
+  position: relative;
+  opacity: 0.80;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("restaurant-website-design.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("feather_drop-wide.jpg");
+  min-height: 400px;
+}
+.caption {
+  position: absolute;
+  right: 30%;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  text-align: center;
+  color: #000;
+}
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    border-radius: 80px;
+}
+
+li {
+    float: left;
+    padding: 10px;	
+}
+
+li a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    
+}
+li a:after
+{
+	position: absolute;
+	top: 10px;
+ 	opacity: 0;
+	
+  	transition: 0.1s;
+}
+li:hover a {
+    background-color: #111111;
+    padding-top:30px;
+    border-radius: 80px;	
+}
+li:hover a:after
+{
+	opacity: 1;
+        top: 10px;
+}
+.hi
+{	
+    background-color: #111;
+    padding: 10px;	
+    width: 40%;
+    position: absolute;
+    right: 20%;
+    left: 30%;
+    top: 40%;
+    border-radius: 80px;
+}
+.header {
+  overflow: hidden;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a:hover {
+  background-color: cyan;
+  color: white;
+  border-radius:250px;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+.singh
+{
+	float:left;
+  	width:30%;
+	
+}
+select,textarea,input[type=text],input[type=date],input[type=datetime-local],input[type=email]
+{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+
+<audio id="myAudio">
+  <source src="record.ogg" type="audio/ogg">
+</audio>
+
+<div class="bgimg-1">
+  <div class="header">
+  <a href="#" class="logo"><img src="restaurant1.jpg" width="200" height="150" style="border-radius:250px;"></a>
+	<span style="font-size: 80px; color:white; font-family: Harrington;padding-left:200px;">Restaurant</span>
+  <div class="header-right">
+    <a href="D:\Gulson\IMP For Study\Backup\File\Gulson\html project\signup.html">SignUp</a>
+    <a href="D:\Gulson\IMP For Study\Backup\File\Gulson\html project\login.html">Login</a>
+  </div>
+</div>
+	<div class="hi">	
+	<ul>
+	    <li><a href="HOME.html">Home</a></li>
+	    <li><a href="menu.html">Menu</a></li>
+ 	    <li><a href="sevices.html">Services</a></li>
+	    <li><a href="ss.html" style="background-color:black;border-radius:250px;">Reservation</a></li>
+	    <li><a href="hello.html">Contact</a></li>
+	</ul>
+	</div>  
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 50px;text-align: justify;">
+  <h3 style="text-align:center;">Reserve Your Seat</h3>
+     <form name="myForm" onsubmit="return validateForm()" method="post">
+<div style="text-align:center;padding-bottom:80px;padding-top:20px;">
+	<h4>Book a table</h4>
+	<div style="padding-left:150px;">
+	<div class="singh">
+		<label>Date</label><br>
+		<input type="date" required>
+	</div>
+	<div class="singh">
+		<label>Time</label><br>
+		<input type="datetime-local" required>
+	</div>
+	<div class="singh">
+		<label>Party</label><br>
+		<select>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		</select>
+	</div>
+	</div>
+</div>
+<div style="text-align:center;padding-bottom:80px;padding-top:20px;">
+	<h4>contact details</h4>
+	<div style="padding-left:150px;">
+	<div class="singh">
+		<label>Name</label><br>
+		<input type="text" name="fname">
+	</div>
+	<div class="singh">
+		<label>E-mail</label><br>
+		<input type="email" name="email" required>
+	</div>
+	<div class="singh">
+		<label>Party</label><br>
+		<input type="text" required>
+	</div>
+	</div>
+</div>
+	<div style="text-align:center;padding-left:50px;padding-top:20px;">
+		<h5>Add a message</h5><br>
+		<textarea rows="4" cols="50"></textarea>
+	</div>	
+	<center><input style="margin:20px;border: 4px solid #ccc;border-radius:20px; padding: 12px 20px;" id="demo" type="submit" value="Request Booking" onclick="playAudio()"></center>
+	</form>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Please Visit Again ! </span>
+	<h1>Thank You</h1>
+  <div style="width:100%; padding-top:40px;">
+	<p style="color:white;">Reservation<br>call us: +91 1800-xxx-xxxx<br>open from 10:00 am to 8:00 pm</p>
+ </div>
+  </div>
+</div>
+<div style="background-color:black;text-align:center;padding:20px;">
+Toll Free No : <span>1800-XXX-XXXX</span>
+	<p>Design By: Gulson &nbsp&nbsp|&nbsp&nbsp <span>Priority Comes First</span></p>
+</div>
+</body>
+</html>
