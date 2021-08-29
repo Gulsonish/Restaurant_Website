@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body, html {
+  height: auto;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: left;
+  font-size: 35px;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: run-in;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  resize:both;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 2px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+  <h4 style="text-align: left;font-size: 35px;">Contact details</h4>
+</div>
+
+<div class="row">
+  <div class="column side" style="background-color:#aaa;">
+  </div>
+
+  <div class="column middle" style="background-color:#bbb;">
+    <p style="font-size: 20px;text-align: right;">Here you can leave a massage!</p>
+
+    <form action="/action_page.php">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  
+  <div class="column side" style="background-color:#ccc;"> 
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="column side bg-green-600" style="background-color:#aaa;">
+    <h2>Contact here:</h2>
+    <p>
+		  Restaurant, Jalandhar, Near Bus Stand Bypass, Punjab, India.<br>
+		  <span>Freephone:</span>	+9198XXXXXXX<br>
+		  <span>Telephone:</span> +91977XXXXXX<br>
+		  <span>E-mail:</span>  <a href="mailto:">abc123@gmail.com</a>
+	  </p>
+  </div>
+  <div class="column side" style="background-color:darkslategrey;">
+    <h2>Miscellaneous Info</h2>
+	  <p>Restaurant is a place for simplicity. Good food, good beer, and good service.</p>
+	  <p>Simple is the name of the game, and <br>we’re good at finding it in all the right places, even in your dining experience</p>
+  </div>
+</div>
+
+<div class="footer">
+  Toll Free No : <span>1800-XXX-XXXX</span>
+	<p>Design By: Gulson &nbsp&nbsp|&nbsp&nbsp <span>Priority Comes First</span></p>
+</div>
+
+</body>
+</html>

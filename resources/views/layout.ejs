@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order and Table Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+
+    <style>
+        .cse1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #295f2d;
+    border-radius: 80px;
+}
+
+.gul1 {
+    float: left;
+    padding: 10px;	
+    border-radius: 80px;
+}
+
+.gul1 a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 80px;
+    
+}
+.gul1 a:after
+{
+	position: absolute;
+	top: 10px;
+ 	opacity: 0;
+	border-radius: 80px;
+  	transition: 0.1s;
+}
+.gul1:hover a {
+    background-color: white;
+    padding-top:30px;
+    border-radius: 80px;	
+}
+.gul1:hover a:after
+{
+	opacity: 1;
+    top: 10px;
+}
+.hiy
+{	
+    background-color: #00cc66;
+    padding: 10px;	
+    width: auto;
+    position: absolute;
+    left: 20%;
+    border-radius: 80px;
+}
+.hiy1
+{
+    background-color: #00cc66;
+    padding: 10px;	
+    float:left;
+    width: auto;
+    position: absolute;
+    right: 5%;
+    border-radius: 80px;
+}
+    </style>
+
+</head>
+
+<body>
+    <nav class="bg-yellow-300 container mx-auto flex items-center justify-between py-4">
+        <div>
+            <a href="/"><img src="/img/logo.png" alt="logo"></a>
+        </div>
+        <div class="hiy">
+            <ul class="cse1 flex place-items-start">
+                <li class="gul1"><a href="/">Home</a></li>
+                <li class="gul1"><a href="/">Menu</a></li>
+                <li class="gul1"><a href="#">Services</a></li>
+                <li class="gul1"><a href="/resources/views/customers/tablebook.ejs">Reservation</a></li>
+                <li class="gul1"><a href="/contact" >Contact</a></li>
+            </ul>
+        </div>
+        <div class="hiy1">
+            <ul class="cse1 flex place-items-start items-center">
+                <% if(user) { %>
+                    <li class="ml-6 gul1">
+                        <form id="logout" action="/logout" method="POST">
+                            <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                        </form>
+                    </li>
+                    <% } else { %>
+                    <li class="gul1 ml-6"><a href="/register">Sign Up</a></li>
+                    <li class="ml-6 gul1"><a href="/login">Log in</a></li>
+                    <% } %>
+                    <li class="ml-6"><a href="/cart" class="bg-green-600 inline px-4 py-2 rounded-full flex items-center">
+                        <span id="cartCounter"
+                            class="text-white font-bold pr-2"><%= session.cart ? session.cart.totalQty : '' %></span>
+                        <img src="/img/cart.png" alt="">
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+    <%- body %>
+    <footer></footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
